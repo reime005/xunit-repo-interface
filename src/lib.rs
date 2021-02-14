@@ -2,9 +2,9 @@
 extern crate serde_derive;
 use std::collections::HashMap;
 
+pub use serde::{Deserialize, Serialize};
 pub use xunit_struct::errors::XunitError;
 pub use xunit_struct::model::Xunit;
-pub use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct File {
@@ -16,9 +16,8 @@ pub struct File {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Enviroment {
     pub sk: Option<String>,
-    pub key_value: HashMap<String,String>,
+    pub key_value: HashMap<String, String>,
 }
-
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Project {
@@ -26,7 +25,6 @@ pub struct Project {
     pub identiifier: Option<String>,
     pub human_name: Option<String>,
 }
-
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Run {
@@ -41,7 +39,6 @@ pub struct Upload {
     pub run: Run,
     pub files: Vec<File>,
 }
-
 
 #[cfg(test)]
 mod tests {
